@@ -1,0 +1,47 @@
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1f1f1f;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin: 24px 5px;
+  color: black;
+  transition: background 0.2s ease;
+}
+
+.location-card:hover {
+  background-color: #2a2a2a;
+}
+
+.flag {
+  width: 48px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #444;
+  flex-shrink: 0;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-info h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #bbbbbb;
+}
+
+.location-info p {
+  margin: 2px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+;
