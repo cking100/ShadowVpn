@@ -1,0 +1,19 @@
+.diagnostics {
+  background-color: #161b22;
+  color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.diagnostics h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.diagnostics ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}

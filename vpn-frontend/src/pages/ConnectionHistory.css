@@ -1,0 +1,25 @@
+.history-panel {
+  background: #181818;
+  padding: 16px;
+  border-radius: 6px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.history-panel h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #00ffc8;
+}
+
+.history-panel ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.history-panel li {
+  padding: 4px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #333;
+}
