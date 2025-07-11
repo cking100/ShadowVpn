@@ -1,27 +1,41 @@
 import './Sidebar.css';
-export default function Sidebar({ activePage, onNavigate }) {
-  const navItems = [
-    { name: 'Dashboard' },
-    { name: 'Diagnostics', },
-    { name: 'Settings' },
-    { name: 'Logout' }
-  ];
+import { NavLink } from 'react-router-dom';
+import { useTheme } from '../ThemeContext'; 
+export default function Sidebar() {
+  const { theme, toggleTheme } = useTheme(); 
 
+  const navItems = [
+    { name: 'Dashboard', path: '/' },
+    { name: 'Connection', path: '/connection' },
+    { name: 'Diagnostics', path: '/diagnostics' },
+    { name: 'Settings', path: '/settings' },
+    { name: 'Logout', path: '/logout' },
+  ];
   return (
     <aside className="sidebar">
-      <div className="logo">Shadow Vpn</div>
+      <div className="logo">Shadow VPN</div>
+
       <ul className="nav">
         {navItems.map((item) => (
-          <li
-          key={item.name}
-          className={activePage === item.name ? 'nav-item active' : 'nav-item'}
-          onClick={() => onNavigate(item.name)}
-          >
-          <span className="icon">{item.icon}</span>
-          <span className="label">{item.name}</span>
-        </li>
+          <li key={item.name} className="nav-item">
+            <NavLink
+              to={item.path}
+              end
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
+              <span className="label">{item.name}</span>
+            </NavLink>
+          </li>
         ))}
       </ul>
+
+      <div className="theme-toggle">
+        <button onClick={toggleTheme}>
+          {theme === 'dark' ? ' Light Mode' : ' Dark Mode'}
+        </button>
+      </div>
     </aside>
   );
 }
