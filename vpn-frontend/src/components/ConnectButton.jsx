@@ -1,6 +1,6 @@
 import "./ConnectButton.css";
 
-export default function ConnectButton({ connected, toggleConnection }) {
+export default function Connect({ connected, toggleConnection }) {
   return (
     <button
       className={`connect-btn ${connected ? "disconnect" : "connect"}`}
