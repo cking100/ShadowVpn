@@ -1,20 +1,51 @@
+/* Base reset */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #111;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dashboard {
-  text-align: center;
-  padding: 20px;
+/* Theme variables */
+:root[data-theme='dark'] {
+  --bg-color: #111;
+  --text-color: #fff;
+  --card-color: #222;
+  --accent-color: #00ffc8;
+  --border-color: #444;
+  --btn-bg: #555;
 }
 
-.main h2 {
-  font-size: 1.8rem;
-  margin: 20px 0;
+:root[data-theme='light'] {
+  --bg-color: #f0f0f0;
+  --text-color: #111;
+  --card-color: #fff;
+  --accent-color: #0077cc;
+  --border-color: #ccc;
+  --btn-bg: #ddd;
 }
 
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-color);
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Sidebar & containers */
+.sidebar,
+.dashboard-main,
+.dashboard-cards,
+.card {
+  background-color: var(--card-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Status Cards */
 .status-cards {
   display: flex;
   justify-content: center;
@@ -24,10 +55,11 @@ body {
 }
 
 .status-card {
-  background-color: #222;
+  background-color: var(--card-color);
   border-radius: 8px;
   padding: 20px;
   width: 180px;
+  transition: background-color 0.3s ease;
 }
 
 .status-card h3 {
@@ -37,15 +69,17 @@ body {
 
 .status-card p {
   font-size: 1.2rem;
-  color: #00ffc8;
+  color: var(--accent-color);
 }
 
+/* Connect Button */
 .connect-btn {
   padding: 12px 24px;
   font-size: 1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .connect {
@@ -58,25 +92,20 @@ body {
   color: white;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #222;
-  padding: 16px;
-  border-bottom: 1px solid #444;
-}
-
+/* Logout Button */
 .logout-btn {
-  background-color: #555;
-  color: white;
+  background-color: var(--btn-bg);
+  color: var(--text-color);
   border: none;
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* Location Selector */
 .location-select {
   margin: 20px auto;
-  color: white;
+  color: var(--text-color);
 }
 
 .location-select label {
@@ -87,8 +116,24 @@ body {
 .location-select select {
   padding: 6px 12px;
   font-size: 1rem;
-  background-color: #222;
-  color: #00ffc8;
-  border: 1px solid #555;
+  background-color: var(--card-color);
+  color: var(--accent-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
+}
+
+/* Sidebar Theme Toggle */
+.theme-toggle {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.theme-toggle button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
